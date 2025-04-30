@@ -1,0 +1,339 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "4ca609aa-ccba-4d38-95e1-c493c8c28e2d",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Cisco Talos Threat Intelligence - 1.0.0",
+      "description": "Talos Threat Intelligence connector enables seamless integration with Cisco Talos Threat Intelligence using CIsco SecureX APIs to retrieve reputation data for IPs, domains, URLs, and file hashes. This helps security teams automate threat intelligence gathering and enhance incident response workflows.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Cisco",
+        "cisco-talos-threat-intelligence"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "d8695f61-3fc1-407b-aed2-c190a6762d8e",
+          "collection": "/api/3/workflow_collections/4ca609aa-ccba-4d38-95e1-c493c8c28e2d",
+          "triggerLimit": null,
+          "description": "Retrieves IP reputation data from Cisco SecureX Threat Response.",
+          "name": "Get IP Reputation",
+          "tag": "#Cisco Talos Threat Intelligence",
+          "recordTags": [
+            "Cisco",
+            "cisco-talos-threat-intelligence"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/342b1d40-43bc-464b-ab3e-ed8f8935f5b2",
+          "steps": [
+            {
+              "uuid": "342b1d40-43bc-464b-ab3e-ed8f8935f5b2",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "83904856-b7cc-4602-b491-1b41c0bf133c",
+                "title": "Cisco Talos Threat Intelligence: Get IP Reputation",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "526488c6-5731-4fe9-9d3d-58bdc31977ed",
+              "@type": "WorkflowStep",
+              "name": "Get IP Reputation",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Cisco Talos Threat Intelligence",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "cisco-talos-threat-intelligence",
+                "operation": "get_ip_reputation",
+                "operationTitle": "Get IP Reputation",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "8406673b-1e03-4c55-81fb-7f17921b1c14",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get IP Reputation",
+              "sourceStep": "/api/3/workflow_steps/342b1d40-43bc-464b-ab3e-ed8f8935f5b2",
+              "targetStep": "/api/3/workflow_steps/526488c6-5731-4fe9-9d3d-58bdc31977ed"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "33d72d30-ed90-476d-a73e-0369e79d5552",
+          "collection": "/api/3/workflow_collections/4ca609aa-ccba-4d38-95e1-c493c8c28e2d",
+          "triggerLimit": null,
+          "description": "Retrieves domain reputation data from Cisco SecureX Threat Response.",
+          "name": "Get Domain Reputation",
+          "tag": "#Cisco Talos Threat Intelligence",
+          "recordTags": [
+            "Cisco",
+            "cisco-talos-threat-intelligence"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f82f6cd3-2005-4f55-b5a2-6cdecf6e2fc7",
+          "steps": [
+            {
+              "uuid": "f82f6cd3-2005-4f55-b5a2-6cdecf6e2fc7",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "d01f3675-84db-4847-a688-c17275788d1f",
+                "title": "Cisco Talos Threat Intelligence: Get Domain Reputation",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "1652cdef-a1eb-4b35-9b69-dfc0c844b8a9",
+              "@type": "WorkflowStep",
+              "name": "Get Domain Reputation",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Cisco Talos Threat Intelligence",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "cisco-talos-threat-intelligence",
+                "operation": "get_domain_reputation",
+                "operationTitle": "Get Domain Reputation",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "4438df27-c5f3-405a-af72-49f47f123784",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Domain Reputation",
+              "sourceStep": "/api/3/workflow_steps/f82f6cd3-2005-4f55-b5a2-6cdecf6e2fc7",
+              "targetStep": "/api/3/workflow_steps/1652cdef-a1eb-4b35-9b69-dfc0c844b8a9"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "cb80e931-7c4a-47d0-9115-e43b701b8cef",
+          "collection": "/api/3/workflow_collections/4ca609aa-ccba-4d38-95e1-c493c8c28e2d",
+          "triggerLimit": null,
+          "description": "Retrieves URL reputation data from Cisco SecureX Threat Response.",
+          "name": "Get URL Reputation",
+          "tag": "#Cisco Talos Threat Intelligence",
+          "recordTags": [
+            "Cisco",
+            "cisco-talos-threat-intelligence"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/75ba160b-e91b-4503-ada7-e620c576b705",
+          "steps": [
+            {
+              "uuid": "75ba160b-e91b-4503-ada7-e620c576b705",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "5584df4a-1abf-4c40-91bb-dae7b460a2d6",
+                "title": "Cisco Talos Threat Intelligence: Get URL Reputation",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "bf33f758-dee9-48df-9bc1-a1bf744aa85d",
+              "@type": "WorkflowStep",
+              "name": "Get URL Reputation",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Cisco Talos Threat Intelligence",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "cisco-talos-threat-intelligence",
+                "operation": "get_url_reputation",
+                "operationTitle": "Get URL Reputation",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "c76a77a1-6b0c-47bd-8256-9b495f456328",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get URL Reputation",
+              "sourceStep": "/api/3/workflow_steps/75ba160b-e91b-4503-ada7-e620c576b705",
+              "targetStep": "/api/3/workflow_steps/bf33f758-dee9-48df-9bc1-a1bf744aa85d"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "20c4820c-b8a8-4dd2-9b11-48374181f83c",
+          "collection": "/api/3/workflow_collections/4ca609aa-ccba-4d38-95e1-c493c8c28e2d",
+          "triggerLimit": null,
+          "description": "Retrieves file hash reputation data from Cisco SecureX Threat Response.",
+          "name": "Get File Hash Reputation",
+          "tag": "#Cisco Talos Threat Intelligence",
+          "recordTags": [
+            "Cisco",
+            "cisco-talos-threat-intelligence"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/290c82c9-39c4-4d74-92d6-05011e70531a",
+          "steps": [
+            {
+              "uuid": "290c82c9-39c4-4d74-92d6-05011e70531a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "b6762129-bd4d-46f1-ad75-0e29b84fbc03",
+                "title": "Cisco Talos Threat Intelligence: Get File Hash Reputation",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "ee4d8e80-7c34-4f73-85c6-ce0ef95a10d1",
+              "@type": "WorkflowStep",
+              "name": "Get File Hash Reputation",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Cisco Talos Threat Intelligence",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "cisco-talos-threat-intelligence",
+                "operation": "get_file_hash_reputation",
+                "operationTitle": "Get File Hash Reputation",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "b4402661-af87-4245-8dee-fc112195490a",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get File Hash Reputation",
+              "sourceStep": "/api/3/workflow_steps/290c82c9-39c4-4d74-92d6-05011e70531a",
+              "targetStep": "/api/3/workflow_steps/ee4d8e80-7c34-4f73-85c6-ce0ef95a10d1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
