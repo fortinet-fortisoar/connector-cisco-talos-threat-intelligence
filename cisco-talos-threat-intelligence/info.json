@@ -1,296 +1,294 @@
 {
-    "name": "cisco-talos-threat-intelligence",
-    "version": "1.0.0",
-    "label": "Cisco Talos Threat Intelligence",
-    "description": "Talos Threat Intelligence connector enables seamless integration with Cisco Talos Threat Intelligence using CIsco SecureX APIs to retrieve reputation data for IPs, domains, URLs, and file hashes. This helps security teams automate threat intelligence gathering and enhance incident response workflows.",
-    "publisher": "SpryIQ.co",
-    "icon_small_name": "small.png",
-    "icon_large_name": "large.png",
-    "category": [
-        "Threat Intelligence",
-        "ThreatIntel"
-    ],
-    "configuration": {
-        "fields": [
-            {
-                "title": "Server URL",
-                "type": "text",
-                "name": "server_url",
-                "required": true,
-                "visible": true,
-                "editable": true,
-                "placeholder": "https://visibility.amp.cisco.com",
-                "tooltip": "Base URL of the Cisco SecureX API.",
-                "description": "The full URL to the Cisco SecureX Threat Response server.",
-                "value": ""
-            },
-            {
-                "title": "Client ID",
-                "type": "text",
-                "name": "client_id",
-                "required": true,
-                "visible": true,
-                "editable": true,
-                "tooltip": "Client ID issued by Cisco SecureX.",
-                "description": "Used for authenticating with the Cisco SecureX Threat Response API."
-            },
-            {
-                "title": "Client Secret",
-                "type": "password",
-                "name": "client_secret",
-                "required": true,
-                "visible": true,
-                "editable": true,
-                "tooltip": "Client Secret associated with the Client ID.",
-                "description": "Secret key used in combination with the Client ID to authenticate with the API."
-            },
-            {
-                "title": "Verify SSL",
-                "type": "checkbox",
-                "name": "verify_ssl",
-                "required": false,
-                "visible": true,
-                "editable": true,
-                "tooltip": "Enable to verify SSL certificates.",
-                "description": "Set this to true to verify the SSL certificate of the Cisco SecureX server.",
-                "value": true
-            }
-        ]
-    },
-    "operations": [
+  "name": "cisco-talos-threat-intelligence",
+  "version": "1.0.0",
+  "label": "Cisco Talos Threat Intelligence",
+  "description": "Talos Threat Intelligence connector enables seamless integration with Cisco Talos Threat Intelligence using CIsco SecureX APIs to retrieve reputation data for IPs, domains, URLs, and file hashes. This helps security teams automate threat intelligence gathering and enhance incident response workflows.",
+  "publisher": "SpryIQ.co",
+  "cs_compatible": true,
+  "cs_approved": false,
+  "contributor": "Roshan Bangera",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-talos-threat-intelligence/blob/release/1.0.0/docs/README.md",
+  "category": [
+    "Threat Intelligence",
+    "ThreatIntel"
+  ],
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "type": "text",
+        "name": "server_url",
+        "required": true,
+        "visible": true,
+        "editable": true,
+        "placeholder": "https://visibility.amp.cisco.com",
+        "tooltip": "Base URL of the Cisco SecureX API.",
+        "description": "The full URL to the Cisco SecureX Threat Response server.",
+        "value": ""
+      },
+      {
+        "title": "Client ID",
+        "type": "text",
+        "name": "client_id",
+        "required": true,
+        "visible": true,
+        "editable": true,
+        "tooltip": "Client ID issued by Cisco SecureX.",
+        "description": "Used for authenticating with the Cisco SecureX Threat Response API."
+      },
+      {
+        "title": "Client Secret",
+        "type": "password",
+        "name": "client_secret",
+        "required": true,
+        "visible": true,
+        "editable": true,
+        "tooltip": "Client Secret associated with the Client ID.",
+        "description": "Secret key used in combination with the Client ID to authenticate with the API."
+      },
+      {
+        "title": "Verify SSL",
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "required": false,
+        "visible": true,
+        "editable": true,
+        "tooltip": "Enable to verify SSL certificates.",
+        "description": "Set this to true to verify the SSL certificate of the Cisco SecureX server.",
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "title": "Get IP Reputation",
+      "operation": "get_ip_reputation",
+      "annotation": "get_ip_reputation",
+      "description": "Retrieves IP reputation data from Cisco SecureX Threat Response.",
+      "parameters": [
         {
-            "title": "Get IP Reputation",
-            "operation": "get_ip_reputation",
-            "annotation": "get_ip_reputation",
-            "description": "Retrieves IP reputation data from Cisco SecureX Threat Response.",
-            "parameters": [
-                {
-                    "title": "IP Address",
-                    "type": "text",
-                    "name": "ip_address",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "tooltip": "The IP address to retrieve reputation data for.",
-                    "description": "Specify a valid IP address to check its threat reputation."
-                }
-            ],
-            "output_schema": {
-                "data": [
-                    {
-                        "module": "",
-                        "module-type": "",
-                        "data": {
-                            "verdicts": {
-                                "count": "",
-                                "docs": [
-                                    {
-                                        "type": "",
-                                        "disposition": "",
-                                        "observable": {
-                                            "value": "",
-                                            "type": ""
-                                        },
-                                        "disposition_name": "",
-                                        "valid_time": {
-                                            "start_time": "",
-                                            "end_time": ""
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "module": "",
-                        "module-type": "",
-                        "data": {
-                            "verdicts": {
-                                "count": "",
-                                "docs": []
-                            }
-                        }
-                    }
-                ]
-            },
-            "open": false
-        },
-        {
-            "title": "Get Domain Reputation",
-            "operation": "get_domain_reputation",
-            "annotation": "get_domain_reputation",
-            "description": "Retrieves domain reputation data from Cisco SecureX Threat Response.",
-            "parameters": [
-                {
-                    "title": "Domain",
-                    "type": "text",
-                    "name": "domain",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "tooltip": "The domain to retrieve reputation data for.",
-                    "description": "Specify the domain name to check its threat reputation."
-                }
-            ],
-            "output_schema": {
-                "data": [
-                    {
-                        "module": "",
-                        "module-type": "",
-                        "data": {
-                            "verdicts": {
-                                "count": "",
-                                "docs": [
-                                    {
-                                        "type": "",
-                                        "disposition": "",
-                                        "observable": {
-                                            "value": "",
-                                            "type": ""
-                                        },
-                                        "disposition_name": "",
-                                        "valid_time": {
-                                            "start_time": "",
-                                            "end_time": ""
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "module": "",
-                        "module-type": "",
-                        "data": {
-                            "verdicts": {
-                                "count": "",
-                                "docs": []
-                            }
-                        }
-                    }
-                ]
-            },
-            "open": false
-        },
-        {
-            "title": "Get URL Reputation",
-            "operation": "get_url_reputation",
-            "annotation": "get_url_reputation",
-            "description": "Retrieves URL reputation data from Cisco SecureX Threat Response.",
-            "parameters": [
-                {
-                    "title": "URL",
-                    "type": "text",
-                    "name": "url",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "tooltip": "The URL to retrieve reputation data for.",
-                    "description": "Provide a URL to look up its threat reputation using Cisco SecureX."
-                }
-            ],
-            "output_schema": {
-                "data": [
-                    {
-                        "module": "",
-                        "module-type": "",
-                        "data": {
-                            "verdicts": {
-                                "count": "",
-                                "docs": [
-                                    {
-                                        "type": "",
-                                        "disposition": "",
-                                        "observable": {
-                                            "value": "",
-                                            "type": ""
-                                        },
-                                        "disposition_name": "",
-                                        "valid_time": {
-                                            "start_time": "",
-                                            "end_time": ""
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "module": "",
-                        "module-type": "",
-                        "data": {
-                            "verdicts": {
-                                "count": "",
-                                "docs": []
-                            }
-                        }
-                    }
-                ]
-            },
-            "open": false
-        },
-        {
-            "title": "Get File Hash Reputation",
-            "operation": "get_file_hash_reputation",
-            "annotation": "get_file_hash_reputation",
-            "description": "Retrieves file hash reputation data from Cisco SecureX Threat Response.",
-            "parameters": [
-                {
-                    "title": "File Hash",
-                    "type": "text",
-                    "name": "file_hash",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "tooltip": "The file hash to retrieve reputation data for.",
-                    "description": "Enter the hash of a file (MD5/SHA256) to assess its reputation."
-                }
-            ],
-            "output_schema": {
-                "data": [
-                    {
-                        "module": "",
-                        "module-type": "",
-                        "data": {
-                            "verdicts": {
-                                "count": "",
-                                "docs": [
-                                    {
-                                        "type": "",
-                                        "disposition": "",
-                                        "observable": {
-                                            "value": "",
-                                            "type": ""
-                                        },
-                                        "disposition_name": "",
-                                        "valid_time": {
-                                            "start_time": "",
-                                            "end_time": ""
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "module": "",
-                        "module-type": "",
-                        "data": {
-                            "verdicts": {
-                                "count": "",
-                                "docs": []
-                            }
-                        }
-                    }
-                ]
-            },
-            "open": false
+          "title": "IP Address",
+          "type": "text",
+          "name": "ip_address",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "tooltip": "The IP address to retrieve reputation data for.",
+          "description": "Specify a valid IP address to check its threat reputation."
         }
-    ],
-    "contributor": "Roshan Bangera",
-    "active": true,
-    "cs_compatible": true,
-    "system": false,
-    "help_online": "",
-    "vendor_version": null
+      ],
+      "output_schema": {
+        "data": [
+          {
+            "module": "",
+            "module-type": "",
+            "data": {
+              "verdicts": {
+                "count": "",
+                "docs": [
+                  {
+                    "type": "",
+                    "disposition": "",
+                    "observable": {
+                      "value": "",
+                      "type": ""
+                    },
+                    "disposition_name": "",
+                    "valid_time": {
+                      "start_time": "",
+                      "end_time": ""
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "module": "",
+            "module-type": "",
+            "data": {
+              "verdicts": {
+                "count": "",
+                "docs": []
+              }
+            }
+          }
+        ]
+      },
+      "open": false
+    },
+    {
+      "title": "Get Domain Reputation",
+      "operation": "get_domain_reputation",
+      "annotation": "get_domain_reputation",
+      "description": "Retrieves domain reputation data from Cisco SecureX Threat Response.",
+      "parameters": [
+        {
+          "title": "Domain",
+          "type": "text",
+          "name": "domain",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "tooltip": "The domain to retrieve reputation data for.",
+          "description": "Specify the domain name to check its threat reputation."
+        }
+      ],
+      "output_schema": {
+        "data": [
+          {
+            "module": "",
+            "module-type": "",
+            "data": {
+              "verdicts": {
+                "count": "",
+                "docs": [
+                  {
+                    "type": "",
+                    "disposition": "",
+                    "observable": {
+                      "value": "",
+                      "type": ""
+                    },
+                    "disposition_name": "",
+                    "valid_time": {
+                      "start_time": "",
+                      "end_time": ""
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "module": "",
+            "module-type": "",
+            "data": {
+              "verdicts": {
+                "count": "",
+                "docs": []
+              }
+            }
+          }
+        ]
+      },
+      "open": false
+    },
+    {
+      "title": "Get URL Reputation",
+      "operation": "get_url_reputation",
+      "annotation": "get_url_reputation",
+      "description": "Retrieves URL reputation data from Cisco SecureX Threat Response.",
+      "parameters": [
+        {
+          "title": "URL",
+          "type": "text",
+          "name": "url",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "tooltip": "The URL to retrieve reputation data for.",
+          "description": "Provide a URL to look up its threat reputation using Cisco SecureX."
+        }
+      ],
+      "output_schema": {
+        "data": [
+          {
+            "module": "",
+            "module-type": "",
+            "data": {
+              "verdicts": {
+                "count": "",
+                "docs": [
+                  {
+                    "type": "",
+                    "disposition": "",
+                    "observable": {
+                      "value": "",
+                      "type": ""
+                    },
+                    "disposition_name": "",
+                    "valid_time": {
+                      "start_time": "",
+                      "end_time": ""
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "module": "",
+            "module-type": "",
+            "data": {
+              "verdicts": {
+                "count": "",
+                "docs": []
+              }
+            }
+          }
+        ]
+      },
+      "open": false
+    },
+    {
+      "title": "Get File Hash Reputation",
+      "operation": "get_file_hash_reputation",
+      "annotation": "get_file_hash_reputation",
+      "description": "Retrieves file hash reputation data from Cisco SecureX Threat Response.",
+      "parameters": [
+        {
+          "title": "File Hash",
+          "type": "text",
+          "name": "file_hash",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "tooltip": "The file hash to retrieve reputation data for.",
+          "description": "Enter the hash of a file (MD5/SHA256) to assess its reputation."
+        }
+      ],
+      "output_schema": {
+        "data": [
+          {
+            "module": "",
+            "module-type": "",
+            "data": {
+              "verdicts": {
+                "count": "",
+                "docs": [
+                  {
+                    "type": "",
+                    "disposition": "",
+                    "observable": {
+                      "value": "",
+                      "type": ""
+                    },
+                    "disposition_name": "",
+                    "valid_time": {
+                      "start_time": "",
+                      "end_time": ""
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "module": "",
+            "module-type": "",
+            "data": {
+              "verdicts": {
+                "count": "",
+                "docs": []
+              }
+            }
+          }
+        ]
+      },
+      "open": false
+    }
+  ]
 }
