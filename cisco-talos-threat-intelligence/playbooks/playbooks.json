@@ -18,7 +18,7 @@
           "uuid": "d8695f61-3fc1-407b-aed2-c190a6762d8e",
           "collection": "/api/3/workflow_collections/4ca609aa-ccba-4d38-95e1-c493c8c28e2d",
           "triggerLimit": null,
-          "description": "Retrieves IP reputation data from Cisco SecureX Threat Response.",
+          "description": "Retrieves IP reputation details from Cisco SecureX Threat Response.",
           "name": "Get IP Reputation",
           "tag": "#Cisco Talos Threat Intelligence",
           "recordTags": [
@@ -98,7 +98,7 @@
           "uuid": "33d72d30-ed90-476d-a73e-0369e79d5552",
           "collection": "/api/3/workflow_collections/4ca609aa-ccba-4d38-95e1-c493c8c28e2d",
           "triggerLimit": null,
-          "description": "Retrieves domain reputation data from Cisco SecureX Threat Response.",
+          "description": "Retrieves domain reputation details from Cisco SecureX Threat Response.",
           "name": "Get Domain Reputation",
           "tag": "#Cisco Talos Threat Intelligence",
           "recordTags": [
@@ -178,7 +178,7 @@
           "uuid": "cb80e931-7c4a-47d0-9115-e43b701b8cef",
           "collection": "/api/3/workflow_collections/4ca609aa-ccba-4d38-95e1-c493c8c28e2d",
           "triggerLimit": null,
-          "description": "Retrieves URL reputation data from Cisco SecureX Threat Response.",
+          "description": "Retrieves URL reputation details from Cisco SecureX Threat Response.",
           "name": "Get URL Reputation",
           "tag": "#Cisco Talos Threat Intelligence",
           "recordTags": [
@@ -258,7 +258,7 @@
           "uuid": "20c4820c-b8a8-4dd2-9b11-48374181f83c",
           "collection": "/api/3/workflow_collections/4ca609aa-ccba-4d38-95e1-c493c8c28e2d",
           "triggerLimit": null,
-          "description": "Retrieves file hash reputation data from Cisco SecureX Threat Response.",
+          "description": "Retrieves file hash reputation details from Cisco SecureX Threat Response.",
           "name": "Get File Hash Reputation",
           "tag": "#Cisco Talos Threat Intelligence",
           "recordTags": [

@@ -16,11 +16,8 @@ class CiscoTalos_ThreatIntelligence(Connector):
     def execute(self, config, operation, params, **kwargs):
         try:
             action = operations.get(operation)
-            if isinstance(params, list) and len(params) == 0:
-                result = action(config)
-            else:
-                result = action(config, **params)
-            return result
+            logger.debug('In execute() Operation: {}'.format(operation))
+            return action(config, params)
         except Exception as Err:
             logger.error('Exception occurred: {}'.format(Err))
             raise ConnectorError(Err)

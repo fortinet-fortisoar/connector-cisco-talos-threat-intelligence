@@ -28,18 +28,18 @@ Certified: No
 For the procedure to configure a connector, click [here](https://docs.fortinet.com/document/fortisoar/0.0.0/configuring-a-connector/1/configuring-a-connector)
 ### Configuration parameters
 <p>In FortiSOAR&trade;, on the Connectors page, click the <strong>Cisco Talos Threat Intelligence</strong> connector row (if you are in the <strong>Grid</strong> view on the Connectors page) and in the <strong>Configurations&nbsp;</strong> tab enter the required configuration details:&nbsp;</p>
-<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Server URL<br></td><td>The full URL to the Cisco SecureX Threat Response server.<br>
-<tr><td>Client ID<br></td><td>Used for authenticating with the Cisco SecureX Threat Response API.<br>
-<tr><td>Client Secret<br></td><td>Secret key used in combination with the Client ID to authenticate with the API.<br>
+<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Server URL<br></td><td>Specify the server URL to the Cisco Secure Threat Response server.<br>
+<tr><td>Client ID<br></td><td>Specify the Client ID that is used for authenticating with the Cisco SecureX Threat Response API.<br>
+<tr><td>Client Secret<br></td><td>Specify the secret key that is used for authenticating with the Cisco SecureX Threat Response API.<br>
 <tr><td>Verify SSL<br></td><td>Specifies whether the SSL certificate for the server is to be verified or not. <br/>By default, this option is set as True.<br></td></tr>
 </tbody></table>
 
 ## Actions supported by the connector
 The following automated operations can be included in playbooks and you can also use the annotations to access operations from FortiSOAR&trade; release 4.10.0 and onwards:
-<table border=1><thead><tr><th>Function<br></th><th>Description<br></th><th>Annotation and Category<br></th></tr></thead><tbody><tr><td>Get IP Reputation<br></td><td>Retrieves IP reputation data from Cisco SecureX Threat Response.<br></td><td>get_ip_reputation <br/><br></td></tr>
-<tr><td>Get Domain Reputation<br></td><td>Retrieves domain reputation data from Cisco SecureX Threat Response.<br></td><td>get_domain_reputation <br/><br></td></tr>
-<tr><td>Get URL Reputation<br></td><td>Retrieves URL reputation data from Cisco SecureX Threat Response.<br></td><td>get_url_reputation <br/><br></td></tr>
-<tr><td>Get File Hash Reputation<br></td><td>Retrieves file hash reputation data from Cisco SecureX Threat Response.<br></td><td>get_file_hash_reputation <br/><br></td></tr>
+<table border=1><thead><tr><th>Function<br></th><th>Description<br></th><th>Annotation and Category<br></th></tr></thead><tbody><tr><td>Get IP Reputation<br></td><td>Retrieves IP reputation details from Cisco SecureX Threat Response.<br></td><td>get_ip_reputation <br/>Investigation<br></td></tr>
+<tr><td>Get Domain Reputation<br></td><td>Retrieves domain reputation details from Cisco SecureX Threat Response.<br></td><td>get_domain_reputation <br/>Investigation<br></td></tr>
+<tr><td>Get URL Reputation<br></td><td>Retrieves URL reputation details from Cisco SecureX Threat Response.<br></td><td>get_url_reputation <br/>Investigation<br></td></tr>
+<tr><td>Get File Hash Reputation<br></td><td>Retrieves file hash reputation details from Cisco SecureX Threat Response.<br></td><td>get_file_hash_reputation <br/>Investigation<br></td></tr>
 </tbody></table>
 
 ### operation: Get IP Reputation
@@ -136,7 +136,7 @@ The output contains the following populated JSON schema:
 
 ### operation: Get URL Reputation
 #### Input parameters
-<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>URL<br></td><td>Provide a URL to look up its threat reputation using Cisco SecureX.<br>
+<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>URL<br></td><td>Specify a URL to look up its threat reputation using Cisco SecureX.<br>
 </td></tr></tbody></table>
 
 #### Output
@@ -182,7 +182,7 @@ The output contains the following populated JSON schema:
 
 ### operation: Get File Hash Reputation
 #### Input parameters
-<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>File Hash<br></td><td>Enter the hash of a file (MD5/SHA256) to assess its reputation.<br>
+<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>File Hash<br></td><td>Specify the hash of a file (MD5/SHA256) to assess its reputation.<br>
 </td></tr></tbody></table>
 
 #### Output
