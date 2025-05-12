@@ -10,10 +10,7 @@
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "help_online": "https://github.com/fortinet-fortisoar/connector-talos-threat-intelligence/blob/release/1.0.0/docs/README.md",
-  "category": [
-    "Threat Intelligence",
-    "ThreatIntel"
-  ],
+  "category": "Threat Intelligence",
   "configuration": {
     "fields": [
       {
